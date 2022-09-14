@@ -4,35 +4,36 @@ import java.util.Scanner;
 
 public class JavaProg {
 	public static void main(String[] args) {
-		System.out.println("BEM-VINDO!!! primeiro programinha");
+				
+		Scanner scan = new Scanner(System.in);
 		
-		Scanner input = new Scanner(System.in);
-			String nome;
-			
-			double nota1, nota2;
-			
-			
-			System.out.println("NOME DO ALUNO:");
-			nome=input.next();
-			
-			System.out.println("primeira nota:");
-			nota1=input.nextDouble();
-			
-			System.out.println("segunda nota:");
-			nota2=input.nextDouble();
+		int num, impar = 0, par = 0;
+		
+		for( int numero = 1; numero <= 10; numero++ ) {
 			
 			
-			double mediaFinal = (nota1 + nota2)/2;
+			System.out.println("digite o " +numero+"° numero:");
+			num = scan.nextInt();
 			
-			if (mediaFinal >= 7) {
+			if(num == 0) {
+				System.out.println("zero nao é divisivel, digite novamente o "+numero+"°:");
+				num = scan.nextInt();
 				
-				System.out.println("Aluno "+ nome +" aprovado com média " + mediaFinal);
-				
-			} else {
-				System.out.println("Aluno "+ nome +" reprovado com média " + mediaFinal);
 			}
 			
+			if (num % 2 == 0){
+				par++;
+			}
+			
+			if (num % 2 == 1) {
+				impar++;
+			}
 			
 		}
-
+		
+		System.out.println("numeros pares:"+par);
+		System.out.println("numeros impares:"+ impar);
+		
+		
+ }
 }
