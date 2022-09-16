@@ -2,38 +2,39 @@ package primeiroProg.JavaProg;
 
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class JavaProg {
 	public static void main(String[] args) {
 				
 		Scanner scan = new Scanner(System.in);
 		
-		int num, impar = 0, par = 0;
+		//tabuada
+		int result = 0;
 		
-		for( int numero = 1; numero <= 10; numero++ ) {
+		String num1 = JOptionPane.showInputDialog(null, "Digite um numero para tabuada:");
+		
+		int num01 = Integer.parseInt(num1);
+		
+		String num = JOptionPane.showInputDialog(null, "Digite de onde iniciar:");
+		
+		int i = Integer.parseInt(num);
+		
+		String num3 = JOptionPane.showInputDialog(null, "Digite ate onde quer parar:");
+		
+		int num03 = Integer.parseInt(num3);
+		
+		for(;i<num03; i++) {
+			result = num01 * i;
 			
+			JOptionPane.showMessageDialog(null, num01+ "x" +i+"="+result);
 			
-			System.out.println("digite o " +numero+"° numero:");
-			num = scan.nextInt();
-			
-			if(num == 0) {
-				System.out.println("zero nao é divisivel, digite novamente o "+numero+"°:");
-				num = scan.nextInt();
-				
+			if(result % 2 == 0) {
+				JOptionPane.showMessageDialog(null, "Resultado com numero par");
+			}else if(result % 2==1) {
+				JOptionPane.showMessageDialog(null, "Resultado com numero impar");
 			}
-			
-			if (num % 2 == 0){
-				par++;
-			}
-			
-			if (num % 2 == 1) {
-				impar++;
-			}
-			
 		}
-		
-		System.out.println("numeros pares:"+par);
-		System.out.println("numeros impares:"+ impar);
-		
-		
+			
  }
 }
