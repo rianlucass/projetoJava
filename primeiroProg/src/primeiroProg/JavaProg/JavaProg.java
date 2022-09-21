@@ -4,37 +4,31 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
+import JavaProg.classes.Aluno;
+ 
 public class JavaProg {
 	public static void main(String[] args) {
-				
-		Scanner scan = new Scanner(System.in);
 		
-		//tabuada
-		int result = 0;
+		Aluno aluno1 = new Aluno();
 		
-		String num1 = JOptionPane.showInputDialog(null, "Digite um numero para tabuada:");
+		String nome = JOptionPane.showInputDialog("Nome do aluno:");
+		String idade = JOptionPane.showInputDialog("Idade:");
+		String cpf = JOptionPane.showInputDialog("digite seu cpf:");
+		String nota1 = JOptionPane.showInputDialog("digite sua 1° nota:");
+		String nota2 = JOptionPane.showInputDialog("digite sua 2° nota:");
+		String nota3 = JOptionPane.showInputDialog("digite sua 3° nota:");
+		String nota4 = JOptionPane.showInputDialog("digite sua 4° nota:");
 		
-		int num01 = Integer.parseInt(num1);
+		aluno1.setNome(nome);
+		aluno1.setIdade(Integer.valueOf(idade));
+		aluno1.setNumeroCpf(cpf);
+		aluno1.setNota1(Double.parseDouble(nota1));
+		aluno1.setNota2(Double.parseDouble(nota2));
+		aluno1.setNota3(Double.parseDouble(nota3));
+		aluno1.setNota4(Double.parseDouble(nota4));
 		
-		String num = JOptionPane.showInputDialog(null, "Digite de onde iniciar:");
+		JOptionPane.showMessageDialog(null, "A media do aluno é "+ aluno1.getMedia());
+		JOptionPane.showMessageDialog(null, aluno1.getResultado());
 		
-		int i = Integer.parseInt(num);
-		
-		String num3 = JOptionPane.showInputDialog(null, "Digite ate onde quer parar:");
-		
-		int num03 = Integer.parseInt(num3);
-		
-		for(;i<num03; i++) {
-			result = num01 * i;
-			
-			JOptionPane.showMessageDialog(null, num01+ "x" +i+"="+result);
-			
-			if(result % 2 == 0) {
-				JOptionPane.showMessageDialog(null, "Resultado com numero par");
-			}else if(result % 2==1) {
-				JOptionPane.showMessageDialog(null, "Resultado com numero impar");
-			}
-		}
-			
  }
 }
